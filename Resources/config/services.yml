@@ -1,0 +1,10 @@
+parameters:
+#    striide_web.example.class: Striide\WebBundle\Example
+
+services:
+  striide_web.twig.markup.extension:
+    class: Striide\WebBundle\Extension\MarkupExtension
+    calls:
+      - [ setKernel, [@kernel]]
+    tags:
+      - { name: twig.extension }
