@@ -8,3 +8,7 @@ services:
       - [ setKernel, [@kernel]]
     tags:
       - { name: twig.extension }
+  striide_web.twig.data.extension:
+    class: Striide\WebBundle\Extension\DataExtension
+    tags:
+      - { name: twig.extension }
