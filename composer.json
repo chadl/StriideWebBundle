@@ -20,5 +20,5 @@
 			"Striide\\WebBundle": ""
 		}
 	},
-	"target-dir": "Striide/StriideWebBundle"
+	"target-dir": "StriideWebBundle"
 }
