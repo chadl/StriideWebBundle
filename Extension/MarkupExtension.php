@@ -9,6 +9,29 @@ class MarkupExtension extends \Twig_Extension
   {
     $this->kernel = $kernel;
   }
+
+  private $domain_name = null;
+  public function setDomainName($domain_name)
+  {
+    $this->domain_name = $domain_name;
+  }
+
+  private $router = null;
+  public function setRouter($router)
+  {
+    $this->router = $router;
+  }
+
+  public function getFunctions()
+  {
+    return array('webcal' => new \Twig_Function_Method($this, 'getWebcal'));
+  }
+
+  public function getWebcal($name,$parameters)
+  {
+    return "webcal://" . $this->domain_name . $this->router->generate($name, $parameters, false);
+  }
+
   public function getGlobals()
   {
     return array(

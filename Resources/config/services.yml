@@ -6,6 +6,8 @@ services:
     class: Striide\WebBundle\Extension\MarkupExtension
     calls:
       - [ setKernel, [@kernel]]
+      - [ setRouter, [@router]]
+      - [ setDomainName, [%domain_name%] ]
     tags:
       - { name: twig.extension }
   striide_web.twig.data.extension:
